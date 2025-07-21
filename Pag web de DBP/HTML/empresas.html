@@ -179,37 +179,102 @@
     </section>
 
     <!-- Services Section -->
-    <section class="services">
-        <div class="services-content">
-            <h2>Elige lo que buscas para ti</h2>
-            <div class="services-grid">
-                <div class="service-card">
+     <div class="container">
+        <h1 class="section-title">Elige lo que buscas para ti</h1>
+        
+        <div class="services-grid">
+            <!-- Servicios principales siempre visibles -->
+            <div class="service-card">
+                <a href="cuentasdeahorrro.html">
+                    <div class="digital-badge">Digital</div>
                     <div class="service-icon">💳</div>
-                    <h3>Pagos PSE</h3>
-                </div>
-                <div class="service-card">
+                    <div class="service-title">Cuentas de ahorro</div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="tarjetadecredito.html">
+                    <div class="digital-badge">Digital</div>
+                    <div class="service-icon">💳</div>
+                    <div class="service-title">Tarjetas de crédito</div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="libreinvercion.html">
+                    <div class="digital-badge">Digital</div>
                     <div class="service-icon">💰</div>
-                    <h3>Recaudo y pagos</h3>
+                    <div class="service-title">Libre inversión</div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="nuestroscanales.html">
+                    <div class="service-icon">📱</div>
+                    <div class="service-title">Nuestros canales</div>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <a href="#">
+                    <div class="service-icon">📍</div>
+                    <div class="service-title">Puntos de atención</div>
+                </a>
+            </div>
+
+            <!-- Botón Ver más/Ver menos - posición 6 -->
+            <button class="toggle-btn" id="toggleBtn">
+                <div class="toggle-icon" id="toggleIcon">
+                    <span style="color: #1e40af; font-size: 16px;">▼</span>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💳</div>
-                    <h3>Tarjetas de crédito</h3>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📈</div>
-                    <h3>Fondos de inversión</h3>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🎧</div>
-                    <h3>Nuestros canales</h3>
-                </div>
-                <div class="service-card" style="background: #1e3a8a; color: white;">
-                    <div class="service-icon" style="background: white; color: #1e3a8a;">▼</div>
-                    <h3>Ver más</h3>
-                </div>
+                <span id="toggleText">Ver más</span>
+            </button>
+
+            <!-- Servicios adicionales que se muestran/ocultan -->
+            <div class="service-card hidden-service">
+                <a href="#">
+                    <div class="service-icon">🎫</div>
+                    <div class="service-title">Turnos virtuales</div>
+                </a>
+            </div>
+
+            <div class="service-card hidden-service">
+                <a href="creditosdevivienda.html">
+                    <div class="digital-badge">Digital</div>
+                    <div class="service-icon">🏠</div>
+                    <div class="service-title">Crédito de vivienda</div>
+                </a>
+            </div>
+
+            <div class="service-card hidden-service">
+                <a href="#">
+                    <div class="service-icon">⚡</div>
+                    <div class="service-title">FacilPass</div>
+                </a>
+            </div>
+
+            <div class="service-card hidden-service">
+                <a href="#">
+                    <div class="service-icon">☕</div>
+                    <div class="service-title">Canal Cafetero</div>
+                </a>
+            </div>
+
+            <div class="service-card hidden-service">
+                <a href="seguridadbancaria.html">
+                    <div class="service-icon">🔒</div>
+                    <div class="service-title">Seguridad bancaria</div>
+                </a>
+            </div>
+
+            <div class="service-card hidden-service">
+                <a href="#">
+                    <div class="service-icon">📞</div>
+                    <div class="service-title">Contáctanos</div>
+                </a>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Security Warning -->
     <section class="security-warning">
@@ -614,6 +679,40 @@
     // Ejecutar al cargar la página
     updateDropdownPosition();
 });
+    const toggleBtn = document.getElementById('toggleBtn');
+        const toggleText = document.getElementById('toggleText');
+        const toggleIcon = document.getElementById('toggleIcon');
+        const hiddenServices = document.querySelectorAll('.hidden-service');
+        const servicesGrid = document.querySelector('.services-grid');
+        let isExpanded = false;
+    toggleBtn.addEventListener('click', function() {
+            if (isExpanded) {
+                // Contraer - ocultar servicios adicionales y mover botón a posición 6
+                hiddenServices.forEach(service => {
+                    service.classList.remove('show');
+                });
+                
+                // Mover el botón de vuelta a la posición 6 (después del 5to servicio)
+                const fifthService = servicesGrid.children[4]; // Puntos de atención (índice 4)
+                servicesGrid.insertBefore(toggleBtn, fifthService.nextSibling);
+                
+                toggleText.textContent = 'Ver más';
+                toggleIcon.classList.remove('rotated');
+                isExpanded = false;
+            } else {
+                // Expandir - mostrar servicios adicionales y mover botón al final
+                hiddenServices.forEach(service => {
+                    service.classList.add('show');
+                });
+                
+                // Mover el botón al final del grid (posición 12)
+                servicesGrid.appendChild(toggleBtn);
+                
+                toggleText.textContent = 'Ver menos';
+                toggleIcon.classList.add('rotated');
+                isExpanded = true;
+            }
+        });
     </script>
 </body>
 </html>
