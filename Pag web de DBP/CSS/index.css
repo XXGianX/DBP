@@ -173,9 +173,7 @@ body {
 .btn-white {
     background-color: white;
     color: #1e4d8b;
-    border: none;
     padding: 12px 30px;
-    border-radius: 25px;
     cursor: pointer;
     font-weight: 600;
     transition: transform 0.3s;
@@ -189,7 +187,6 @@ body {
     color: white;
     text-decoration: none;
     font-weight: 500;
-    border-bottom: 1px solid white;
 }
 
 .hero-image {
@@ -358,6 +355,7 @@ body {
     flex: 1;
 }
 .account-image img {
+    border-radius: 10%;
     width: 100%;
     height: auto;
     max-width: 400px;
@@ -544,7 +542,6 @@ body {
     flex: 1;
     width:80%;
     background: linear-gradient(45deg, #00008d, #0015d1);
-    border-radius: 20px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -561,6 +558,7 @@ body {
     max-width: 400px;
     display: block;
     object-fit: contain;
+    border-radius: 20px;
 }
 
 .card-image2 {
@@ -568,7 +566,6 @@ body {
     flex: 1;
     width:80%;
     background: linear-gradient(45deg, #00008d, #0015d1);
-    border-radius: 20px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -588,6 +585,24 @@ body {
 }
 
 .card-image3 {
+    flex: 1;
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+}
+.card-image4 img {
+    width: 100%;
+    border-radius:10%;
+    height: auto;
+    max-width: 500px;
+    display: block;
+    object-fit: contain;
+}
+
+.card-image4 {
     flex: 1;
     border-radius: 20px;
     padding: 40px;
@@ -674,12 +689,13 @@ body {
 /* Mobile App Section */
 .mobile-app {
     background: #c4bc86;
-    padding: 60px 20px;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     max-width: 1200px;
     margin: 40px auto 0 auto;
+    border-radius: 20px;
 }
 
 .app-content {
@@ -699,7 +715,8 @@ body {
     flex: 1;
 }
 .qr-code img {
-    width: 100%;
+    margin-left: auto;
+    width: 30%;
     height: auto;
     max-width: 400px;
     display: block;
@@ -724,7 +741,8 @@ body {
     flex: 1;
 }
 .security-image img {
-    width: 100%;
+    width: 70%;
+    border-radius:20%;
     height: auto;
     max-width: 800px;
     display: block;
@@ -1294,22 +1312,6 @@ body {
     align-items: center;
 }
 
-.logo {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: bold;
-    color: #1e3a8a;
-}
-
-.logo::after {
-    content: '';
-    width: 30px;
-    height: 30px;
-    background: linear-gradient(45deg, #f59e0b, #ef4444, #3b82f6);
-    border-radius: 50%;
-    margin-left: 10px;
-}
 
 .nav-menu {
     display: flex;
@@ -1349,14 +1351,14 @@ body {
     align-items: center;
     gap: 8px;
 }
-
 .btn-primary {
-    background-color: white;
-    color: #1e40af;
+    background-color:#1e40af ;
+    color: white;
     padding: 12px 24px;
-    border-radius: 8px;
+    border-radius: 25px;
     text-decoration: none;
-    font-weight: 600;
+    font-size: 16px;
+    font-weight: 500;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -1593,8 +1595,6 @@ body {
 
         .btn-white {
             padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
             background: white;
@@ -1610,10 +1610,8 @@ body {
 
         .link-white {
             color: white;
-            text-decoration: underline;
             font-size: 1em;
             padding: 12px 24px;
-            border: 2px solid white;
             border-radius: 5px;
             transition: all 0.3s ease;
         }
@@ -1632,10 +1630,11 @@ body {
         .slide-box {
             background: #0f1572;
             color: white;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 1px;
+            border-radius: 5px;
             text-align: center;
-            width: 200px;
+            width: 300px;
+            height: 200px;
             box-shadow: 0 5px 20px rgba(0,0,0,0.3);
             align-self: center;
         }
@@ -1648,7 +1647,7 @@ body {
         .slide-box .big-text {
             font-size: 2.5em;
             font-weight: bold;
-            margin: 10px 0;
+            margin: 1px 0;
         }
 
         .slide-box .medium-text {
@@ -1699,53 +1698,6 @@ body {
                 width: 150px;
             }
         }
-.hero-slider {
-    position: relative;
-    max-width: 1200px;
-    height: 450px;
-    margin: 40px auto;
-    overflow: hidden;
-    background-color: #1e3a8a;
-    border-radius: 12px;
-}
-.slide-box {
-    background: #0f1572;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-    flex-shrink: 0;
-    align-self: center;
-    position: absolute;
-    top: 15%;
-    right: 40px; /* o ajusta según lo lejos que quieres que esté del borde derecho */
-}
-.slide-box .small-text {
-    font-size: 0.9em;
-    margin-bottom: 5px;
-    background: white;
-    color: #1e3a8a;
-    padding: 4px 12px;
-    border-radius: 20px;
-    display: inline-block;
-}
-
-.slide-box .big-text {
-    font-size: 2.5em;
-    font-weight: bold;
-    margin: 10px 0;
-}
-
-.slide-box .medium-text {
-    font-size: 1.1em;
-    margin-bottom: 5px;
-}
-
-.slide-box .highlight {
-    color: #fbbf24; /* Amarillo */
-}
 
 /* SLIDES */
 .hero-slide {
@@ -1776,7 +1728,7 @@ body {
     flex-direction: column;
     justify-content: center;
     text-align: left;
-    height: 100%;
+    height: 600px;
 }
 
 .hero-left h1 {
@@ -1801,9 +1753,9 @@ body {
 .btn-white {
     background: white;
     color: #1e3a8a;
+    border-color:#1e3a8a;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    border-radius: 55px;
     font-weight: bold;
     cursor: pointer;
     transition: background 0.3s;
@@ -1815,7 +1767,6 @@ body {
 
 .link-white {
     color: white;
-    text-decoration: underline;
     font-weight: bold;
 }
 
@@ -1825,7 +1776,9 @@ body {
     flex: 1;
     max-width: 400px;
     min-width: 400px;
-    position: relative;
+    position: absolute;
+    right: 20px;
+    top:20px;
     display: flex;
     align-items: center;
     justify-content: center;
